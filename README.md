@@ -25,3 +25,5 @@ based on the process run time. The higher the runtime the process gets placed in
 - kernel/proc.c → scheduler implementation
 
 ## Note
+
+This repository does not contain a full xv6 system. It includes only modified source files intended to be applied to a complete xv6 base system.
