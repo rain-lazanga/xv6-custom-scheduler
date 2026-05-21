@@ -7,7 +7,7 @@ Modifications are my own.
 
 ## Overview
 This project modifies the XV6 scheduler to a custom two level feedback queue scheduler
-based on the process run time. The higher the runtime the process gets placed in a high priority queue where it decrements its run time every cycle then puts it into low priority when its runtime is exhausted.  
+based on the process run time. The higher the runtime the process gets placed in a high priority queue where it decrements its run time every cycle then puts it into low priority when its runtime is exhausted. It also adds a test program, a debug mode for the scheduler and creates a forking function that initializes the runlength variable the scheduler is based on. 
 
 ## How it works
 1. All processes in the process table are scanned each scheduling cycle.
@@ -19,5 +19,9 @@ based on the process run time. The higher the runtime the process gets placed in
 5. Low priority processes are scheduled after all high priority processes are handled.
 
 ## Key files modified
+- kernel/defs.h → kernel function declarations
+- kernel/sysproc.c → process-related system calls
+- kernel/syscall.c → system call modifications
+- kernel/proc.c → scheduler implementation
 
 ## Note
