@@ -6,8 +6,8 @@ Original source code is licensed under the MIT License.
 Modifications are my own.
 
 ## Overview
-This project modifies the XV6 scheduler to a custom two level feedback queue scheduler
-based on the process run time. The higher the runtime the process gets placed in a high priority queue where it decrements its run time every cycle then puts it into low priority when its runtime is exhausted. It also adds a test program, a debug mode for the scheduler and creates a forking function that initializes the runlength variable the scheduler is based on. 
+This project modifies the XV6 scheduler to a custom two queue scheduler
+based on the process execution budget tracking. Processes are split into two groups based on their remaining execution budget and when their budged is exhausted processes from the high priority are demoted to a low priority It also adds a test program, a debug mode for the scheduler and creates a forking function that initializes the runlength variable the scheduler is based on. 
 
 ## How it works
 1. All processes in the process table are scanned each scheduling cycle.
@@ -17,6 +17,7 @@ based on the process run time. The higher the runtime the process gets placed in
 3. High priority processes execute first and decrement their runLength during execution.
 4. Once a process exhausts its runLength, it is moved to the low priority queue.
 5. Low priority processes are scheduled after all high priority processes are handled.
+6. Low priority processes are handled with Round Robin scheduling
 
 ## Key files modified
 - kernel/defs.h → kernel function declarations
