@@ -23,7 +23,12 @@ based on the process run time. The higher the runtime the process gets placed in
 - kernel/sysproc.c → process-related system calls
 - kernel/syscall.c → system call modifications
 - kernel/proc.c → scheduler implementation
-
+- kernel/syscall.h → system call declaration
+- kernel/syscall.c → system call function declaration
+- kernel/sysproc.c → system call function implementation
+- kernel/vmstats.h → test program variable declarations
+- user/vmstats.c → test program implementation
+- user/user.h → test program function declaration
 ## Note
 
 This repository does not contain a full xv6 system. It includes only modified source files intended to be applied to a complete xv6 base system.
