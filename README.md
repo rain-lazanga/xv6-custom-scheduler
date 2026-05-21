@@ -21,7 +21,6 @@ based on the process run time. The higher the runtime the process gets placed in
 ## Key files modified
 - kernel/defs.h → kernel function declarations
 - kernel/sysproc.c → process-related system calls
-- kernel/syscall.c → system call modifications
 - kernel/proc.c → scheduler implementation
 - kernel/syscall.h → system call declaration
 - kernel/syscall.c → system call function declaration
